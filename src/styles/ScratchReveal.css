@@ -1,0 +1,317 @@
+.scratch-section{
+
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  padding:40px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8,
+      #f7efe3
+    );
+}
+
+.scratch-heading{
+
+  text-align:center;
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  color:#8a7a5f;
+
+  margin-bottom:30px;
+
+  font-size:0.9rem;
+}
+
+.scratch-card{
+
+  position:relative;
+
+  width:100%;
+  max-width:750px;
+
+  height:320px;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  background:white;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.08);
+}
+
+.gold-foil{
+
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d4af37,
+      #f7e08b,
+      #b8860b
+    );
+
+  color:white;
+
+  z-index:2;
+
+  transition:
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+.scratch-card.revealed .gold-foil{
+
+  transform:
+    translateX(120%);
+
+  opacity:0;
+}
+
+.foil-shine{
+
+  position:absolute;
+
+  top:0;
+  left:-100%;
+
+  width:40%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.7),
+      transparent
+    );
+
+  animation:
+    shine 3s linear infinite;
+}
+
+@keyframes shine{
+
+  from{
+    left:-100%;
+  }
+
+  to{
+    left:200%;
+  }
+}
+
+.gold-foil h2{
+
+  font-size:3rem;
+
+  text-align:center;
+
+  margin-bottom:30px;
+
+  padding:0 30px;
+
+  line-height:1.2;
+}
+
+.reveal-btn{
+
+  border:none;
+
+  padding:15px 35px;
+
+  border-radius:40px;
+
+  background:white;
+
+  color:#b8860b;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:
+    transform .3s ease;
+}
+
+.reveal-btn:hover{
+
+  transform:
+    scale(1.05);
+}
+
+.date-reveal{
+
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+
+  background:white;
+
+  opacity:0;
+
+  transform:
+    scale(0.9);
+
+  transition:
+    all 1s ease;
+}
+
+.date-reveal.show{
+
+  opacity:1;
+
+  transform:
+    scale(1);
+}
+
+.save-date{
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  color:#8a7a5f;
+
+  margin-bottom:20px;
+
+  font-size:1rem;
+
+  text-align:center;
+}
+
+.date-reveal h2{
+
+  font-size:4rem;
+
+  color:#c8a03b;
+
+  text-align:center;
+
+  margin-bottom:15px;
+
+  animation:
+    glowPulse 2s ease-in-out infinite;
+}
+
+.event-time{
+
+  color:#666;
+
+  font-size:1rem;
+
+  letter-spacing:2px;
+}
+
+@keyframes glowPulse{
+
+  0%{
+    text-shadow:
+      0 0 10px rgba(212,175,55,.2);
+  }
+
+  50%{
+    text-shadow:
+      0 0 30px rgba(212,175,55,.7),
+      0 0 60px rgba(212,175,55,.3);
+  }
+
+  100%{
+    text-shadow:
+      0 0 10px rgba(212,175,55,.2);
+  }
+}
+
+@media(max-width:768px){
+
+  .scratch-heading{
+
+    font-size:0.75rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+  }
+
+  .scratch-card{
+
+    width:92%;
+
+    height:320px;
+  }
+
+  .gold-foil h2{
+
+    font-size:2rem;
+
+    line-height:1.2;
+
+    padding:0 20px;
+  }
+
+  .reveal-btn{
+
+    padding:14px 28px;
+  }
+
+  .save-date{
+
+    font-size:0.9rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    text-align:center;
+  }
+
+  .date-reveal h2{
+
+    font-size:3rem;
+
+    line-height:1.1;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    padding:0 20px;
+  }
+
+  .event-time{
+
+    font-size:1rem;
+
+    text-align:center;
+  }
+
+}

@@ -1,0 +1,173 @@
+.schedule-section{
+
+  min-height:100vh;
+
+  padding:100px 20px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  linear-gradient(
+    180deg,
+    #fffdf8,
+    #f7efe3
+  );
+}
+
+.schedule-subtitle{
+
+  text-align:center;
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  color:#8a7a5f;
+
+  margin-bottom:20px;
+
+  font-size:0.9rem;
+}
+
+.schedule-title{
+
+  text-align:center;
+
+  color:#c8a03b;
+
+  font-size:4rem;
+
+  margin-bottom:70px;
+
+  font-family:
+  "Cormorant Garamond",
+  serif;
+}
+
+.schedule-grid{
+
+  width:100%;
+
+  max-width:1000px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+}
+
+.schedule-card{
+
+  width:420px;
+
+  background:
+  rgba(255,255,255,0.9);
+
+  border-radius:30px;
+
+  padding:40px;
+
+  text-align:center;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.08);
+
+  transition:
+  transform .3s ease;
+}
+
+.schedule-card:hover{
+
+  transform:
+  translateY(-8px);
+}
+
+.event-time{
+
+  color:#c8a03b;
+
+  font-size:1.1rem;
+
+  letter-spacing:2px;
+
+  margin-bottom:20px;
+}
+
+.schedule-card h3{
+
+  font-size:2rem;
+
+  color:#333;
+
+  margin-bottom:20px;
+
+  font-family:
+  "Cormorant Garamond",
+  serif;
+}
+
+.event-location{
+
+  color:#666;
+
+  font-size:1.1rem;
+
+  line-height:1.8;
+}
+
+@media(max-width:768px){
+
+  .schedule-title{
+
+    font-size:2.8rem;
+  }
+
+  .schedule-card{
+
+    width:100%;
+
+    max-width:500px;
+
+    padding:30px;
+  }
+
+  .schedule-card h3{
+
+    font-size:1.6rem;
+  }
+
+}
+.schedule-card{
+
+  cursor:pointer;
+}
+
+.directions-text{
+
+  display:block;
+
+  margin-top:20px;
+
+  color:#c8a03b;
+
+  font-size:0.85rem;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+.schedule-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.12);
+}

@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  html{
+    scroll-behavior:smooth;
+  }
+  
+  body{
+    font-family: "Georgia", serif;
+    background:#fff8ef;
+    color:#222;
+    overflow-x:hidden;
+  }
+  
+  section{
+    min-height:100vh;
+    padding:80px 20px;
+  }
+  
+  a{
+    text-decoration:none;
+  }
+  section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    border-bottom: 1px solid #ddd;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    font-size: 2rem;
+  }
