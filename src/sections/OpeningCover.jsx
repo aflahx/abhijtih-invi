@@ -16,8 +16,16 @@ function OpeningCover({
 
     setShine(true);
 
+    // Uncomment later if you want music
+    // if (audioRef.current) {
+    //   audioRef.current.volume = 0.25;
+    //   audioRef.current.play();
+    // }
+
     setTimeout(() => {
+
       setTransitioning(true);
+
     }, 500);
 
     setTimeout(() => {
@@ -45,7 +53,9 @@ function OpeningCover({
     }, 1500);
 
     setTimeout(() => {
+
       setTransitioning(false);
+
     }, 2500);
 
   };
@@ -54,19 +64,21 @@ function OpeningCover({
 
     <section className="opening-cover">
 
-      <audio
+      {/* <audio
         ref={audioRef}
         src="/music/wedding.mp3"
         loop
-      />
+      /> */}
+
+      <div className="cover-overlay"></div>
 
       <div className="cover-content">
 
         <div className="top-logo">
 
           <img
-            src="/images/chinga.svg"
-            alt=""
+            src="/typography/chinga.png"
+            alt="ചിങ്ങത്തിൽ കല്യാണം"
           />
 
         </div>
@@ -78,8 +90,8 @@ function OpeningCover({
         >
 
           <img
-            src="/images/middle.svg"
-            alt=""
+            src="/typography/middle.png"
+            alt="അഭിജിത് കൂടെ ആവണി"
           />
 
         </div>
