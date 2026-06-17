@@ -9,6 +9,13 @@ function Schedule() {
     );
   };
 
+  const openBrideCeremony = () => {
+    window.open(
+      "https://maps.app.goo.gl/AwhGVjrzS4Bj2zvH6",
+      "_blank"
+    );
+  };
+
   const openReception = () => {
     window.open(
       "https://maps.app.goo.gl/LtAMK16i57QDX76P7",
@@ -44,6 +51,29 @@ function Schedule() {
 
           <p className="event-location">
             Guruvayoor Sree Krishna Temple
+          </p>
+
+          <span className="directions-text">
+            Tap For Directions
+          </span>
+
+        </div>
+
+        <div
+          className="schedule-card"
+          onClick={openBrideCeremony}
+        >
+
+          <p className="event-time">
+            11:00 AM – 02:00 PM
+          </p>
+
+          <h3>
+            Bride's Ceremony
+          </h3>
+
+          <p className="event-location">
+            Yamuna Castle Auditorium
           </p>
 
           <span className="directions-text">
