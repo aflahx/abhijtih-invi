@@ -36,7 +36,7 @@ function Invitation() {
         </p>
 
         <h2 className="invitation-names">
-          AVANI
+          AVANI KRISHNA
           <span>&</span>
           ABHIJITH
         </h2>
