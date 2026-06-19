@@ -58,6 +58,20 @@ function Gallery() {
 
         </div>
 
+        <div className="gallery-card">
+
+          <img
+            src="/images/gallery4.jpg"
+            alt="Gallery 4"
+            className="gallery-image"
+          />
+
+          <p className="gallery-quote">
+          Not just rings, but a promise to choose each other every day.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
