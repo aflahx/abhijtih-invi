@@ -18,38 +18,37 @@ function GuestBook() {
 
     setLoading(true);
 
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("rsvp", rsvp);
+    formData.append(
+      "guests",
+      rsvp === "accept"
+        ? guests
+        : "0"
+    );
+    formData.append("wishes", wishes);
+
     try {
 
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbwwDT9cs7PQwjcmMjX-dld5QxuBkmox0OBibvCF1G9bO2Xu8O_cLx4yc2cl5CsuAlQ/exec",
         {
           method: "POST",
-          body: JSON.stringify({
-            name,
-            rsvp,
-            guests:
-              rsvp === "accept"
-                ? guests
-                : "0",
-            wishes,
-          }),
+          body: formData,
         }
       );
 
       if (!response.ok) {
-        throw new Error(
-          "Failed to submit RSVP"
-        );
+        throw new Error("Submission failed");
       }
 
       setSubmitted(true);
 
     } catch (error) {
 
-      console.error(
-        "Submission Error:",
-        error
-      );
+      console.error(error);
 
       alert(
         "Something went wrong. Please try again."
@@ -173,7 +172,7 @@ function GuestBook() {
                 )
               }
               required
-            ></textarea>
+            />
 
             <button
               type="submit"
