@@ -8,41 +8,56 @@ function GuestBook() {
   const [guests, setGuests] = useState("");
   const [wishes, setWishes] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
-    const formData = new FormData();
+    if (loading) return;
 
-    formData.append("name", name);
-    formData.append("rsvp", rsvp);
-    formData.append(
-      "guests",
-      rsvp === "accept"
-        ? guests
-        : "0"
-    );
-    formData.append(
-      "wishes",
-      wishes
-    );
+    setLoading(true);
 
     try {
 
-      await fetch(
+      const response = await fetch(
         "https://script.google.com/macros/s/AKfycbwwDT9cs7PQwjcmMjX-dld5QxuBkmox0OBibvCF1G9bO2Xu8O_cLx4yc2cl5CsuAlQ/exec",
         {
           method: "POST",
-          body: formData,
+          body: JSON.stringify({
+            name,
+            rsvp,
+            guests:
+              rsvp === "accept"
+                ? guests
+                : "0",
+            wishes,
+          }),
         }
       );
+
+      if (!response.ok) {
+        throw new Error(
+          "Failed to submit RSVP"
+        );
+      }
 
       setSubmitted(true);
 
     } catch (error) {
 
-      console.error(error);
+      console.error(
+        "Submission Error:",
+        error
+      );
+
+      alert(
+        "Something went wrong. Please try again."
+      );
+
+    } finally {
+
+      setLoading(false);
 
     }
 
@@ -160,8 +175,13 @@ function GuestBook() {
               required
             ></textarea>
 
-            <button type="submit">
-              Send Wishes
+            <button
+              type="submit"
+              disabled={loading}
+            >
+              {loading
+                ? "Submitting..."
+                : "Send Wishes"}
             </button>
 
           </form>
